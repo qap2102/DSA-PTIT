@@ -6,46 +6,52 @@ using namespace std;
     cout.tie(0);
 #define ll long long
 
-int n,k;
-string s;
-vector<string> v;
+int n,k, a[1000], ok, cnt;
 
-bool check(string s){
-    int cnt=0;
-    bool kt = false;
-    for(char x:s){
-        if(x=='A'){
-            ++cnt;
-        }
-        else cnt=0;
-        if(cnt==k){
-            if(kt) return false;
-            kt=true;
-        }
-        if(cnt>k) return false;
+void ktao(){
+    for(int i=1 ; i<= n ; i++){
+        a[i] = 0;
     }
-    return kt;
 }
-
-void Try(int i){
-    for(int j='A';j<='B';++j){
-        s+=j;
-        if(i==n){
-            if(check(s)) v.push_back(s);
-        }
-        else Try(i+1);
-        s.pop_back();
+void sinh(){
+    int i = n;
+    while( i >= 1 && a[i] == 1){
+        a[i] = 0;
+        --i;
     }
+    if( i == 0) ok = 0;
+    else a[i] = 1;
+}
+bool check(){
+    int dem =0, res = 0;
+    for(int i = 1 ; i <= n ; i++){
+        if( a[i] == 0 ) dem++;
+        else dem = 0;
+        if( dem > k) return 0;
+        if( dem == k) res++;
+    }
+    return res == 1;
 }
 
 int main(){
     faster;
-    cin>>n>>k;
-    s="";
-    Try(1);
-    cout<<v.size()<<endl;
-    for(string x:v){
-        cout<<x<<endl;
+    cin >> n >> k;
+    vector<vector<int>>v;
+    ok = 1;
+    ktao();
+    while(ok){
+        if(check()){
+            vector<int>tmp(a+1,a+n+1);
+            v.push_back(tmp);
+        }
+        sinh();
     }
-    
+    cout << v.size() << endl;
+    for(auto it : v){
+        for(int x : it){
+            if( x== 1) cout << "B";
+            else cout << "A";
+        }
+        cout << endl;
+    }
 }
