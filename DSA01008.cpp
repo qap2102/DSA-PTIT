@@ -9,32 +9,32 @@ using namespace std;
 int n,k;
 int a[10005];
 
-int cnt=0;
-bool kt[15]={0};
+bool kt=false;
 
 void in(){
     for(int i=1;i<=n;++i){
-        cout<<a[i];
-    }
-    cout<<endl;
-}
-
-void sinh(int i){
-    for(int j=0;j<=1;++j){
-        a[i]=j;
-        if(i==n){
-            cnt=0;
-            for(int i=1;i<=n;++i){
-                cnt+=a[i];
-
-            }
-            if(cnt==k) in();
-        }
-        else sinh(i+1);
+        a[i]=0;
     }
 }
 
+void sinh(){
+    int i=n;
+    while(a[i]==1 && i>=1){
+        a[i]=0;
+        --i;
+    }
+    if(i==0) kt=true;
+    else a[i]=1;
+}
 
+bool check(int a[]){
+
+    int cnt=0;
+    for(int i=1;i<=n;++i){
+        if(a[i]) cnt++;
+    }
+    return cnt==k;
+}
 
 int main(){
     faster;
@@ -42,8 +42,20 @@ int main(){
     cin>>t;
     while(t--){
         cin>>n>>k;
-        sinh(1);
-        // cout<<endl;
+        in();
+        kt=false;
+        while(!kt){
+            if(check(a)){
+                for(int i=1;i<=n;++i){
+                    cout<<a[i];
+                    
+                }
+                cout<<endl;
+                
+            }
+            sinh();
+        }
+        
     }
     return 0;
 }

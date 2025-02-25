@@ -9,21 +9,22 @@ using namespace std;
 int n;
 int a[10005];
 
-bool kt[15]={0};
+bool kt=false;
 
 void in(){
     for(int i=1;i<=n;++i){
-        cout<<(char)(a[i]+'A'-1);
+        a[i]=0;
     }
-    cout<<" ";
 }
 
-void sinh(int i){
-    for(int j=1;j<=2;++j){
-        a[i]=j;
-        if(i==n) in();
-        else sinh(i+1);
+void sinh(){
+    int i=n;
+    while(a[i]==1 && i>=1){
+        a[i]=0;
+        --i;
     }
+    if(i==0) kt=true;
+    else a[i]=1;
 }
 
 
@@ -34,7 +35,16 @@ int main(){
     cin>>t;
     while(t--){
         cin>>n;
-        sinh(1);
+        in();
+        kt=false;
+        while(!kt){
+            for(int i=1;i<=n;++i){
+                if(a[i]) cout << "B";
+                else cout << "A";
+            }
+            cout<<" ";
+            sinh();
+        }
         cout<<endl;
     }
     return 0;

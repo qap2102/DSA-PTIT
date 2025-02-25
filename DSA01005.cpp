@@ -9,24 +9,23 @@ using namespace std;
 int n;
 int a[10005];
 
-bool kt[15]={0};
+bool kt=false;
 
 void in(){
     for(int i=1;i<=n;++i){
-        cout<<a[i];
+        a[i]=i;
     }
-    cout<<" ";
 }
 
-void sinh(int i){
-    for(int j=1;j<=n;++j){
-        if(!kt[j]){
-            a[i]=j;
-            kt[j]=1;
-            if(i==n) in();
-            else sinh(i+1);
-            kt[j]=0;
-        }
+void sinh(){
+    int i=n-1;
+    while(a[i]<a[i+1]) --i;
+    if(i==0) kt=true;
+    else {
+        int j=n;
+        while(a[j]>a[i]) --j;
+        swap(a[i],a[j]);
+        reverse(a+i+1,a+n+1);
     }
 }
 
@@ -38,7 +37,15 @@ int main(){
     cin>>t;
     while(t--){
         cin>>n;
-        sinh(1);
+        in();
+        do{
+            for(int i=1;i<=n;++i){
+                cout<<a[i];
+            }
+            cout<<" ";
+        
+
+        } while(next_permutation(a+1,a+n+1));
         cout<<endl;
     }
     return 0;

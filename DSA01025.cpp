@@ -9,21 +9,24 @@ using namespace std;
 
 int n,k;
 int a[20];
+bool kt=false;
 
-void in(){
-    for(int i=1;i<=k;++i){
-        cout<<(char)(a[i]+'A'-1);
+void in(int n){
+    for(int i=1;i<=n;++i){
+        a[i]=i;
     }
-    cout<<endl;
-    
 }
-void solve(int i){
-    for(int j=a[i-1]+1;j<=n-k+i;++j){
-        a[i]=j;
-        if(i==k) in();
-        else solve(i+1);
-    }
 
+void sinh(){
+    int i=k;
+    while(a[i] == n - k + i) --i;
+    if(i==0) kt=true;
+    else {
+        a[i]++;
+        for(int j=i+1;j<=k;++j){
+            a[j] = a[j-1] + 1; 
+        }
+    }
 }
 
 int main(){
@@ -32,7 +35,17 @@ int main(){
     cin>>t;
     while(t--){
         cin>>n>>k;
+        in(n);
+        kt=false;
+        while(!kt){
+            char c='A';
+            string s="";
+            for(int i = 1; i <= k; i++){
         
-        solve(1);
+                s += (char)(c + a[i] - 1);
+            }
+            cout << s << "\n";
+            sinh();
+        }
     }
 }

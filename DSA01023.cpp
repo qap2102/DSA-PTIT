@@ -18,31 +18,29 @@ bool check(){
     return true;
 }
 
-void solve(){
-    cin>>n>>k;
-    for(int i=1;i<=k;++i){
-        cin>>a[i];
-        b[i]=i;
-    }
-    int dem=1;
-    while(1){
-        if(check()) break;
-        int tmp=k;
-        while(b[tmp]==n-k+tmp) --tmp;
-        b[tmp]++;
-        for(int i=tmp+1;i<=k;++i){
-            b[i]=b[i-1]+1;
-        }
-        ++dem;
-        
-    }
-    cout<<dem<<endl;
-}
+
 int main(){
     faster;
     int t;
     cin>>t;
     while(t--){
-        solve();
+        cin>>n>>k;
+        for(int i=1;i<=k;++i){
+            cin>>a[i];
+            b[i]=i;
+        }
+        int dem=1;
+        while(1){
+            if(check()) break;
+            int tmp=k;
+            while(b[tmp]==n-k+tmp) --tmp;
+            b[tmp]++;
+            for(int i=tmp+1;i<=k;++i){
+                b[i]=b[i-1]+1;
+            }
+            ++dem;
+        
+        }
+    cout<<dem<<endl;
     }
 }
