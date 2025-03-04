@@ -28,3 +28,4 @@ int main(){
 		cout<<endl;
 	}
 }
+// Độ phức tạp O(t*(sqrt(n)))

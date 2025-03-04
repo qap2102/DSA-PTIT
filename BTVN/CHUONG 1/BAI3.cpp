@@ -33,3 +33,4 @@ int main(){
 		
 	}
 }
+// Độ phức tạp O(t*log(n))

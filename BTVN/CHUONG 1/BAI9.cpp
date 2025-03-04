@@ -50,3 +50,4 @@ int main() {
 	cout << dem/4 ;
 
 }
+// Độ phức tạp O(n^2)

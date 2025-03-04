@@ -35,3 +35,5 @@ int main(){
         cout << endl;
     }
 }
+
+// Độ phức tạp O(t*n^2)

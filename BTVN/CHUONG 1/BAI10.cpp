@@ -31,3 +31,4 @@ int main(){
 		
 	}
 }
+// Độ phức tạp O(t*sqrt(n))

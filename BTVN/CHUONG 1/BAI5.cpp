@@ -20,3 +20,4 @@ int main(){
 		
 	
 }
+// Độ phức tạp O(1)

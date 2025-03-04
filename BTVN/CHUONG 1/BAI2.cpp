@@ -10,7 +10,7 @@ int main(){
 	faster;
 	int t;
 	cin>>t;
-	while(t--){
+	while(t--){ // O(t)
 		string s;
 		cin>>s;
 		int n=s.size();
@@ -18,3 +18,4 @@ int main(){
 		else cout<<"YES"<<endl;
 	}
 }
+// Độ phức tạp O(t)

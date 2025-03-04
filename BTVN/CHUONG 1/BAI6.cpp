@@ -35,3 +35,4 @@ int main(){
 		
 	}
 }
+// Độ phức tạp O(t*n)

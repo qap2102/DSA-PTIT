@@ -6,7 +6,7 @@ using namespace std;
     cout.tie(0);
 #define ll long long
 
-int gcd(ll a, ll b){
+int gcd(ll a, ll b){ //  O(log(min(a,b)))
 	if(b==0) return a;
 	return gcd(b,a%b);
 }
@@ -14,7 +14,7 @@ int main(){
     faster;
     int t;
     cin>>t;
-    while(t--){
+    while(t--){ // O(t)
         ll a,b;
         cin>>a>>b;
         ll k=gcd(a,b);
@@ -22,3 +22,4 @@ int main(){
         cout<<k<<" "<<x<<endl;
     }
 }
+// Độ phức tạp O(t*log(min(a,b)))
