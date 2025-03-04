@@ -6,43 +6,52 @@ using namespace std;
     cout.tie(0);
 #define ll long long
 
-string s;
-int n;
-string a="68";
 
-bool check(){
-    if (s[0]=='6') return false;
-    if (s.back()=='8') return false;
-    int dem1 = 0;
-    int dem2 = 0;
-    for(char i : s){
-        if(i=='6'){
-            ++dem1;
-            dem2=0;
-        }
-        else if(i=='8'){
-            ++dem2;
-            dem1=0;
-        }
-        if(dem1>3 || dem2>1) return false;
-    }
-    return true;
-}
 
-void solve(int i){
-    for(int j=0;j<2;++j){
-        s=s+a[j];
-        if(i==n){
-            if(check()) cout<<s<<endl;
-        }
-        else solve(i+1);
-        s.pop_back();
+
+int n,k,s;
+int a[35], b[1005];
+int kt=1;
+
+
+void ktao(int n){
+    for(int i=1;i<=n;++i){
+        a[i]=6;
     }
 }
+
+void sinh(){
+	int i = n;
+    while(a[i] == 8 && i >= 1) {
+        a[i] = 6;
+        i--;
+    }
+    if(i == 0) kt = 0;
+    else a[i] = 8;
+}
+
+bool check(int a[]){
+    for(int i=1;i<=n-3;++i){
+    	if((a[i] == a[i+1] && a[i] == 8) || (a[i] == a[i+1] && a[i+1] == a[i+2] && a[i+2] == a[i+3] && a[i] == 6)) return false;
+    	
+	}
+	if((a[n-2] == a[n-1] && a[n-2] == 8) || (a[n-1] == a[n] && a[n] == 8)) return false;
+    return (a[1] == 8 && a[n] == 6);
+}
+
+
 
 int main(){
     faster;
     cin>>n;
-    
-    solve(1);
+    ktao(n);
+    while(kt){
+    	if(check(a)){
+    		for(int i=1;i<=n;++i){
+    			cout<<a[i];
+			}
+			cout<<endl;
+		}
+		sinh();
+	}
 }   
