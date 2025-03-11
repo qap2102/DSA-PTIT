@@ -18,16 +18,16 @@ int main(){
             cin>>a[i];
         }
         sort(a,a+n);
-        int i=0, j=n-1;
-        while(i<=j){
-            if(i==j){
-                cout<<a[i]<<" ";
+        int l=0, r=n-1;
+        while(l<=r){
+            if(l==r){
+                cout<<a[l]<<" ";
             }
             else{
-                cout<<a[j]<<" "<<a[i]<<" ";
+                cout<<a[r]<<" "<<a[l]<<" ";
             }
-            i++;
-            j--;
+            l++;
+            r--;
         }
         cout<<endl;
     }
