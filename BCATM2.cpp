@@ -5,14 +5,21 @@ using namespace std;
     cin.tie(0);                  \
     cout.tie(0);
 #define ll long long
+const int MOD = 1e9;
 
-vector<string> v;
-int a[10];
+vector<int> v;
+int a[35];
 int n,m;
 string s;
 bool kt[15]={0};
 
+
 ll cnt;
+int maxx = INT_MAX;
+
+
+
+
 
 int cot[100], xuoi[100], nguoc[100];
 void in(){
@@ -23,37 +30,32 @@ void in(){
 	
 }
 
-void Try(int i, int ans){
-	
-	for(int j=1;j<=n;++j){
-		if(ans>0&&abs(ans-j)==1||kt[j]) continue;
-		a[i]=j;
-		kt[j]=1;
-		
-		if(i==n) in();
-		else Try(i+1,j);
-		kt[j]=0;
-	}
+void Try(int i, int sum, int cnt){
+	if (sum> m||cnt> maxx)
+        return;
+    if (i == n){
+        if (sum==m)
+            maxx = min(cnt,maxx);
+        return;
+    }
+    Try(i + 1, sum, cnt);
+    Try(i + 1, sum + a[i], cnt + 1);
 	
 }
 
 
 int main(){
-	int t;
-	cin>>t;
-	for(int i=1;i<=t;++i){
-		int stt;
-		cin>>stt;
-		int n;
-		cin>>n;
-		cnt=0;
-		for(ll i=2;i<=sqrt(2*n);++i){
-			if((2*n)%i==0&&((2*n)/i+i)%2!=0){
-				cnt+=1;
-			}
-		}
-		cout<<i<<" "<<cnt<<endl;
+	faster;
+	cin>>n>>m;
+	for(int i=0;i<n;++i){
+		cin>>a[i];
 	}
+	sort(a,a+n);
+	Try(0,0,0);
+	cout<<maxx;
+	return 0;
+	
+	
 	
 }
 // de tinh l + (l+1) + (l+2) +...+(r-1) + r = n
