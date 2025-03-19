@@ -12,24 +12,13 @@ const int N=1e6+5;
 
 int main(){
 	faster;
-	int t;
-	cin>>t;
-	while(t--){
-		int n;
-		cin>>n;
-		int a[n];
-		for(int i=0;i<n;++i) cin>>a[i];
-		sort(a,a+n);
-		int l=0, r=n-1;
-		while(l<=r){
-			if(l==r) cout<<a[l]<<" ";
-			else {
-				cout<<a[r]<<" "<<a[l]<<" ";
-			}
-			++l;
-			--r;
-		}
-		cout<<endl;
+	while(1){
+		int a[5];
+		cin>>a[0]>>a[1]>>a[2];
+		if(!a[0]&&!a[1]&&!a[2]) break;
+		sort(a,a+3);
+		if(a[0]*a[0]+a[1]*a[1]==a[2]*a[2]) cout<<"right"<<endl;
+		else cout<<"wrong"<<endl;
 	}
 	
 	

@@ -10,7 +10,8 @@ using namespace std;
 const int MOD = 1e9+7;
 const int N=1e6+5;
 
-int n,x;
+int n;
+int a[N], b[N], c[N];
 
 
 int main(){
@@ -19,23 +20,27 @@ int main(){
 	cin>>t;
 	while(t--){
 		cin>>n;
-		map<int,int> mp;
-		int r = INT_MIN;
-		int l = INT_MAX;
-		for(int i=0;i<n;++i){
-			cin>>x;
-			mp[x]=1;
-			l=min(l,x);
-			r=max(r,x);
+		for(int i=1;i<=n;++i) cin>>a[i];
+		a[0]=b[0]=0;
+		for(int i=1;i<=n;++i){
+			if(a[i]>a[i-1]) b[i]=b[i-1]+1;
+			else b[i]=1;
 		}
-		ll cnt=0;
-		for(int i=l;i<=r;++i){
-			if(!mp[i]) ++cnt;
+		a[n+1]=c[n+1]=0;
+		for(int i=n;i>=1;--i){
+			if(a[i]>a[i+1]) c[i]=c[i+1]+1;
+			else c[i]=1;
 		}
-		cout<<cnt<<endl;
+		int tmp=0;
+		for(int i=1;i<=n;++i) tmp=max(tmp,b[i]+c[i]-1);
+		cout<<tmp<<endl;
+		
+		
+		
 	}
-	
+
 	
 }
+
 
 

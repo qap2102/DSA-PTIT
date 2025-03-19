@@ -10,29 +10,29 @@ using namespace std;
 const int MOD = 1e9+7;
 const int N=1e6+5;
 
+int n,x;
+
+
 int main(){
 	faster;
 	int t;
 	cin>>t;
 	while(t--){
-		int n;
-		cin>>n;
+		cin>>n>>x;
 		int a[n];
-		for(int i=0;i<n;++i) cin>>a[i];
-		sort(a,a+n);
-		int l=0, r=n-1;
-		while(l<=r){
-			if(l==r) cout<<a[l]<<" ";
-			else {
-				cout<<a[r]<<" "<<a[l]<<" ";
-			}
-			++l;
-			--r;
+		int tmp=0;
+		for(int i=0;i<n;++i){
+			cin>>a[i];
+			if(a[i]==x) tmp=i+1;
 		}
-		cout<<endl;
+		cout<<tmp<<endl;
+		
+		
+		
 	}
-	
+
 	
 }
+
 
 
