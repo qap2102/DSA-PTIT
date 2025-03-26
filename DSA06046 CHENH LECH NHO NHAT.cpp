@@ -20,7 +20,7 @@ int main(){
             cin>>a[i];
 
         }
-        ll maxx=1e9;
+        ll maxx=INT16_MAX;
         sort(a,a+n);
         for(ll i=1;i<n;++i){
             if(abs(a[i] - a[i+1]) < maxx) maxx = abs(a[i] - a[i+1]);

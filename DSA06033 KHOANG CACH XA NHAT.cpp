@@ -13,6 +13,7 @@ const int N=1e6+5;
 int n,x;
 
 bool cmp(pair<int,int> a, pair<int,int> b){
+	// fi lưu giá trị, se lưu vị trí
 	if(a.fi<b.fi) return true;
 	if(a.fi==b.fi&&a.se>b.se) return true;
 	return false;
