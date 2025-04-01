@@ -8,23 +8,22 @@ using namespace std;
 #define fi first
 #define se second
 const int MOD = 1e9+7;
-const int N=1e5+5;
-
+const int N=1e6+5;
 
 int main(){
 	faster;
-	int t;
-	cin>>t;
-	while(t--){
-		int n,k;
-		cin>>n>>k;
-		int a[n];
-		for(int i=0;i<n;++i) cin>>a[i];
-		sort(a,a+n);
-		ll cnt=0;
-		for(int i=0;i<n;++i){
-			cnt+=(lower_bound(a+i+1,a+n,a[i]+k)-a)-1-i;
-		}
-		cout<<cnt<<endl;
-	}
+	int n,k;
+    cin>>n>>k;
+    map<int,int> mp;
+    for(int i=0;i<n;++i){
+        int x;
+        cin>>x;
+        mp[x]++;
+    }
+    
+
+	
 }
+
+
+
