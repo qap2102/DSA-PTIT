@@ -1,0 +1,1 @@
+{"name":"Local: DSA03006 SAP XEP THAM LAM","url":"d:\\CODE C++ PTIT\\DSA PTIT\\DSA03006 SAP XEP THAM LAM.cpp","tests":[{"id":1744702188572,"input":"2\n7\n1 6 3 4 5 2 7\n7\n1 6 3 4 5 7 2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CODE C++ PTIT\\DSA PTIT\\DSA03006 SAP XEP THAM LAM.cpp","group":"local","local":true}

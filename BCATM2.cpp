@@ -18,18 +18,6 @@ ll cnt;
 int maxx = INT_MAX;
 
 
-
-
-
-int cot[100], xuoi[100], nguoc[100];
-void in(){
-	for(int i=1;i<=n;++i){
-		cout<<a[i];
-	}
-	cout<<endl;
-	
-}
-
 void Try(int i, int sum, int cnt){
 	if (sum> m||cnt> maxx)
         return;
@@ -58,7 +46,4 @@ int main(){
 	
 	
 }
-// de tinh l + (l+1) + (l+2) +...+(r-1) + r = n
-// => (r+l)(r-l+1)=2*n
-// dat r-l+1=i => i<r+l => i<sqrt(2*n) r+l>sqrt(2*n)
-// 2*r+1 = 2*n/i +i => 2*n chia het cho i va 2*n/i +i le
+
