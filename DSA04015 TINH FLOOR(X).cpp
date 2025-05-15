@@ -22,6 +22,12 @@ int main(){
     cin>>t;
     cin.ignore();
     while(t--){
-        
+        cin>>n>>x;
+        k = -1;
+        for(int i=0;i<n;++i){
+            cin>>a[i];
+            if(a[i]<=x) k = i+1;
+        }
+        cout<<k<<endl;
     }
 }

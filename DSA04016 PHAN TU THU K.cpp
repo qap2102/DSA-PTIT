@@ -22,6 +22,17 @@ int main(){
     cin>>t;
     cin.ignore();
     while(t--){
-        
+        v.clear();
+        cin>>n>>x>>k;
+        for(int i=0;i<n;++i){
+            cin>>a[i];
+            v.push_back(a[i]);
+        }
+        for(int i=0;i<x;++i){
+            cin>>b[i];
+            v.push_back(b[i]);
+        }
+        sort(v.begin(), v.end());
+        cout<<v[k-1]<<endl;
     }
 }

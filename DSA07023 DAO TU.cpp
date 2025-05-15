@@ -10,10 +10,10 @@ using namespace std;
 const int MOD = 1e9+7;
 const int N=1e6+5;
 
-int t,n,x,k;
-ll a[N], b[N], c[N];
-vector<int> v;
-vector<vector<int>> vv;
+ll t,n,x,k;
+ll a[N], b[N], c[N*2];
+vector<ll> v;
+vector<vector<ll>> vv;
 bool kt = false;
 string s;
 
@@ -22,6 +22,16 @@ int main(){
     cin>>t;
     cin.ignore();
     while(t--){
-        
+        getline(cin, s);
+        // cout<<s<<endl;
+        stack<string> st;
+        stringstream ss(s);
+        string s1 = "";
+        while(ss>>s1) st.push(s1);
+        while(!st.empty()){
+            cout<<st.top()<<" ";
+            st.pop();
+        }
+        cout<<endl;
     }
 }

@@ -10,18 +10,22 @@ using namespace std;
 const int MOD = 1e9+7;
 const int N=1e6+5;
 
-int t,n,x,k;
-ll a[N], b[N], c[N];
-vector<int> v;
-vector<vector<int>> vv;
+ll t,n,x,k;
+ll a[N], b[N], c[N*2];
+vector<ll> v;
+vector<vector<ll>> vv;
 bool kt = false;
-string s;
+string s, s1;
 
 int main(){
     faster;
     cin>>t;
     cin.ignore();
     while(t--){
-        
+        cin>>n>>k;
+        for(int i=0;i<n;++i) cin>>a[i];
+        x = lower_bound(a, a+n, k) - a;
+        if(x==n||a[x]!=k) cout<<"NO"<<endl;
+        else cout<<x+1<<endl;
     }
 }

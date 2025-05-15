@@ -41,6 +41,6 @@ int dem(string a, int b[]){
 
 int main(){
     faster;
-    cin>>s;
-    cout<<dem(s,c);
+    cin>>n;
+    cout<<(1<<(n))<<endl;
 }

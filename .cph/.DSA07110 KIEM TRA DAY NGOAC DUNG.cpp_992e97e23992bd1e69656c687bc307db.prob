@@ -1,0 +1,1 @@
+{"name":"Local: DSA07110 KIEM TRA DAY NGOAC DUNG","url":"d:\\CODE C++ PTIT\\DSA PTIT\\DSA07110 KIEM TRA DAY NGOAC DUNG.cpp","tests":[{"id":1747148901890,"input":"2\n\n[()]{}{[()()]()}\n\n[(])","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CODE C++ PTIT\\DSA PTIT\\DSA07110 KIEM TRA DAY NGOAC DUNG.cpp","group":"local","local":true}

@@ -10,18 +10,28 @@ using namespace std;
 const int MOD = 1e9+7;
 const int N=1e6+5;
 
-int t,n,x,k;
+ll t,n,x,k;
 ll a[N], b[N], c[N];
 vector<int> v;
 vector<vector<int>> vv;
 bool kt = false;
 string s;
 
+ll luythua(ll a, ll b){
+    if(!b) return 1;
+    ll c = luythua(a, b/2);
+    c = (c*c)%MOD;
+    if(b&1) c = (c*a)%MOD;
+    return c;
+}
+
 int main(){
     faster;
-    cin>>t;
-    cin.ignore();
-    while(t--){
-        
+    while(1){
+        cin>>n>>x;
+        if(!n&&!x) break;
+        cout<<luythua(n, x)<<endl;
+
+
     }
 }
