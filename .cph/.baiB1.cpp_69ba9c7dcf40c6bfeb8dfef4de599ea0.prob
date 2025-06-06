@@ -1,0 +1,1 @@
+{"name":"Local: baiB1","url":"d:\\CODE C++ PTIT\\DSA PTIT\\baiB1.cpp","tests":[{"id":1749091116141,"input":"4\n0 1 0 0\n1 0 1 0\n0 1 0 1\n0 0 1 0\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CODE C++ PTIT\\DSA PTIT\\baiB1.cpp","group":"local","local":true}

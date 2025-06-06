@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define faster                   \
+    ios::sync_with_stdio(false); \
+    cin.tie(0);                  \
+    cout.tie(0);
+#define ll long long
+#define fi first
+#define se second
+const int MOD = 1e9+7;
+const int N=1e6+5;
+
+ll t,n,x,k;
+ll a[N], b[N], c[N];
+vector<ll> v;
+vector<vector<ll>> vv;
+bool kt = false;
+string s,s1;
+
+int main(){
+    faster;
+    cin>>t;
+    cin.ignore();
+    while(t--){
+        cin>>n;
+        a[0]=1;
+        a[1]=1;
+        a[2]=2;
+        for(int i=3;i<=n;++i){
+            a[i]=a[i-1]+a[i-2]+a[i-3];
+        }
+        cout<<a[n]<<endl;
+    }
+}
